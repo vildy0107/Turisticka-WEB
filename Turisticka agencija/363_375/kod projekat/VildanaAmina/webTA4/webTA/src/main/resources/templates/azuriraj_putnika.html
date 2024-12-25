@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Putnik</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://wallpapers.com/images/featured/beautiful-travel-730oz7ejbh6axdlf.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: 60px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #F1C40F; /* Zlato žuta boja */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ECF0F1; /* Svijetlo siva */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 14px;
+            border: 1px solid #BDC3C7; /* Svijetlo siva */
+            border-radius: 5px;
+            background: #34495E; /* Tamno siva */
+            color: #ECF0F1; /* Svijetlo siva */
+        }
+
+        input[type="text"]::placeholder {
+            color: #BDC3C7; /* Svijetlo siva */
+        }
+
+        button {
+            background-color: #2980B9; /* Plava */
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #3498DB; /* Svjetlija plava */
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #F1C40F; /* Zlato žuta boja */
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #F39C12; /* Svjetlija zlatno-žuta */
+        }
+
+        .error-message {
+            color: #E74C3C;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Uredi Putnika</h1>
+
+    <form th:action="@{/putnici/edit}" th:object="${putnik}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{name}" placeholder="Ime" />
+        <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+        <input type="text" th:field="*{email}" placeholder="Email" />
+        <div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+        <button type="submit">Ažuriraj Putnika</button>
+    </form>
+
+    <a class="back-link" href="/putnici">Nazad</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://wallpapers.com/images/featured/beautiful-travel-730oz7ejbh6axdlf.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.5); /* Poluprovidna pozadina */
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      margin: 100px auto; /* Centriranje kontejnera */
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #F1C40F; /* Zlato žuta boja */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ECF0F1; /* Svetlo siva */
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 14px;
+      border: 1px solid #BDC3C7; /* Svetlo siva */
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1); /* Poluprovidno belo */
+      color: #ECF0F1; /* Svetlo siva */
+      outline: none;
+    }
+
+    input[type="text"]::placeholder, input[type="password"]::placeholder {
+      color: #BDC3C7; /* Svetlo siva */
+    }
+
+    button {
+      background-color: #2980B9; /* Plava */
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #3498DB; /* Svetlija plava */
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #F1C40F; /* Zlatno žuta */
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #F39C12; /* Svetlija zlatno-žuta */
+    }
+
+    .error-message {
+      color: #E74C3C;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+  <title>Registracija korisnika</title>
+</head>
+<body>
+<div class="container">
+  <h1>Registracija</h1>
+  <form th:action="@{/register}" method="post">
+    <label for="username">Korisnik:</label>
+    <input type="text" id="username" name="username" placeholder="Unesite korisničko ime" required />
+    <label for="password">Lozinka:</label>
+    <input type="password" id="password" name="password" placeholder="Unesite lozinku" required />
+    <button type="submit">Registriraj</button>
+  </form>
+</div>
+</body>
+</html>

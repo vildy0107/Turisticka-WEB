@@ -1,0 +1,98 @@
+/* Global styling */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp7050216.jpg'); /* URL slike */
+    background-size: cover; /* Obezbeđuje da slika prekriva celu pozadinu */
+    background-position: center; /* Centira sliku */
+    display: flex; /* Aktivira flexbox layout */
+    align-items: center; /* Vertikalno centriranje sadržaja */
+    justify-content: center; /* Horizontalno centriranje sadržaja */
+}
+
+/* Login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.8); /* Poluprozirna bijela pozadina */
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Titles and descriptions */
+.login-container h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Actions (buttons and links) */
+.form-actions {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ffa500; /* Narančasta boja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* For links styled as buttons */
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #e59400; /* Tamnija narančasta */
+}
+
+.register-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    text-decoration: underline;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover {
+    color: #ffa500;
+}
+
+/* Status messages */
+.status-message p {
+    margin-top: 10px;
+    font-size: 14px;
+}

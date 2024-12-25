@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj Putnika</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <style>
+        body {
+            background-image: url('https://images.alphacoders.com/109/thumb-1920-1093592.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #f1f1f1;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Dodaj Putnika</h1>
+
+    <form th:action="@{/putnici/new}" th:object="${putnik}" method="post">
+        <label for="name">Ime:</label>
+        <input type="text" th:field="*{name}" placeholder="Ime" />
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Greška u imenu</div>
+
+        <label for="email">Email:</label>
+        <input type="text" th:field="*{email}" placeholder="Email" />
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Greška u email-u</div>
+
+        <button type="submit">Sačuvaj</button>
+    </form>
+
+    <a href="/putniks">Nazad</a>
+
+</div>
+</body>
+</html>

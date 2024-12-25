@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinacije - Turistička Agencija</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wallpapers.com/images/hd/pink-solid-color-364gx2fy3h6alydq.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3em;
+      color: #f8f9fa;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .destination-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .destination-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .destination-card img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .destination-card .info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .destination-card .info h3 {
+      margin: 0;
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .destination-card .info p {
+      margin: 10px 0;
+      color: #555;
+    }
+
+    .destination-card .info button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      background-color: #0056b3; /* Fallback color */
+    }
+
+    .destination-card .info button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr); /* For medium screens, 2 columns */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr; /* For small screens, 1 column */
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Putujte s Nama</h1>
+</header>
+<div class="container">
+  <article class="destination-card">
+    <img src="https://t4.ftcdn.net/jpg/02/96/15/35/360_F_296153501_B34baBHDkFXbl5RmzxpiOumF4LHGCvAE.jpg" alt="Paris" srcset="https://t4.ftcdn.net/jpg/02/96/15/35/360_F_296153501_B34baBHDkFXbl5RmzxpiOumF4LHGCvAE.jpg 800w, https://t4.ftcdn.net/jpg/02/96/15/35/360_F_296153501_B34baBHDkFXbl5RmzxpiOumF4LHGCvAE.jpg 1200w">
+    <div class="info">
+      <h3>Pariz</h3>
+      <p>Grad svjetlosti i romantike.</p>
+      <form action="/choose-destination" method="POST">
+        <input type="hidden" name="destinationName" value="Pariz">
+        <button type="submit">Izaberi</button>
+      </form>
+    </div>
+  </article>
+  <article class="destination-card">
+    <img src="https://i.natgeofe.com/k/a6c9f195-de20-445d-9d36-745ef56042c5/OG_Colosseum_Ancient-Rome_KIDS_1122_3x2.jpg" alt="Rome" srcset="https://i.natgeofe.com/k/a6c9f195-de20-445d-9d36-745ef56042c5/OG_Colosseum_Ancient-Rome_KIDS_1122_3x2.jpg 800w, https://i.natgeofe.com/k/a6c9f195-de20-445d-9d36-745ef56042c5/OG_Colosseum_Ancient-Rome_KIDS_1122_3x2.jpg 1200w">
+    <div class="info">
+      <h3>Rim</h3>
+      <p>Vječni grad sa bogatom istorijom.</p>
+      <form action="/choose-destination" method="POST">
+        <input type="hidden" name="destinationName" value="Rim">
+        <button type="submit">Izaberi</button>
+      </form>
+    </div>
+  </article>
+  <article class="destination-card">
+    <img src="https://media.istockphoto.com/id/1145450965/photo/santorini-island-greece.jpg?s=612x612&w=0&k=20&c=AY_kxRrkTjbDLhqpotxgW8CZp4ovEIM1tRdTrvXKcAM=" alt="Santorini" srcset="https://media.istockphoto.com/id/1145450965/photo/santorini-island-greece.jpg?s=612x612&w=0&k=20&c=AY_kxRrkTjbDLhqpotxgW8CZp4ovEIM1tRdTrvXKcAM= 800w, https://media.istockphoto.com/id/1145450965/photo/santorini-island-greece.jpg?s=612x612&w=0&k=20&c=AY_kxRrkTjbDLhqpotxgW8CZp4ovEIM1tRdTrvXKcAM= 1200w">
+    <div class="info">
+      <h3>Santorini</h3>
+      <p>Bjeli gradovi i plava mora.</p>
+      <form action="/choose-destination" method="POST">
+        <input type="hidden" name="destinationName" value="Santorini">
+        <button type="submit">Izaberi</button>
+      </form>
+    </div>
+  </article>
+  <article class="destination-card">
+    <img src="https://rodinistanbul.com/wp-content/uploads/2023/04/day-trips-from-istanbul-copy.jpg" alt="Istanbul" srcset="https://rodinistanbul.com/wp-content/uploads/2023/04/day-trips-from-istanbul-copy.jpg 800w, https://rodinistanbul.com/wp-content/uploads/2023/04/day-trips-from-istanbul-copy.jpg 1200w">
+    <div class="info">
+      <h3>Istanbul</h3>
+      <p>Most između Istoka i Zapada.</p>
+      <form action="/choose-destination" method="POST">
+        <input type="hidden" name="destinationName" value="Istanbul">
+        <button type="submit">Izaberi</button>
+      </form>
+    </div>
+  </article>
+</div>
+</body>
+</html>
+``

@@ -1,0 +1,52 @@
+
+package projekat.webTA.Repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import projekat.webTA.Models.Course;
+
+@Repository
+public interface CourseRepository extends JpaRepository<Course, Long> {
+    // JpaRepository provides built-in CRUD methods, so no additional methods are necessary here for basic operations.
+}
+
+
+/*package unze.ptf.minicis.Repositories;
+
+import org.springframework.stereotype.Repository;
+import unze.ptf.minicis.Models.Course;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public class CourseRepository {
+    private List<Course> courses = new ArrayList<>();
+
+    // Constructor to initialize courses
+    public CourseRepository() {
+        // Adding 5 courses to the repository
+        courses.add(new Course(1L, "Introduction to Java", "Learn the basics of Java programming."));
+        courses.add(new Course(2L, "Spring Framework Basics", "Understand the core principles of Spring Framework."));
+        courses.add(new Course(3L, "Database Design", "Explore relational databases and design principles."));
+        courses.add(new Course(4L, "Web Development with Spring Boot", "Build web applications using Spring Boot."));
+        courses.add(new Course(5L, "Microservices Architecture", "Introduction to designing and building microservices."));
+    }
+
+    public List<Course> findAll() {
+        return courses;
+    }
+
+    public Optional<Course> findById(Long id) {
+        return courses.stream().filter(course -> course.getId().equals(id)).findFirst();
+    }
+
+    public void save(Course course) {
+        courses.add(course);
+    }
+
+    public void deleteById(Long id) {
+        courses.removeIf(course -> course.getId().equals(id));
+    }
+}
+*/
